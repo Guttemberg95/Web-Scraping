@@ -34,8 +34,8 @@ for pagina in range(1):
     for item in range(len(holstel_containers)):
         holstel_nome.append(holstel_containers[item].h2.a.text)
         holstel_link.append(holstel_containers[item].h2.a.get('href'))
-        holstel_ratings.append(holstel_containers[item].find(class_='hwta-rating-score').text.replace('\n', '').strip)
-        holstel_rewiew.append(holstel_containers[item].find(class_='hwta-rating-counter').text.replace('\n', '').strip)
+        holstel_ratings.append(holstel_containers[item].find(class_='hwta-rating-score').text.replace('\n', '').strip())
+        holstel_rewiew.append(holstel_containers[item].find(class_='hwta-rating-counter').text.replace('\n', '').strip())
         holstel_preco.append(holstel_containers[item].find(class_='price').text.replace('\n', '').strip()[3:])
     sleep(2)
 
@@ -46,8 +46,10 @@ holstel_floripa= pd.DataFrame({
     'Preço': holstel_preco,
     'Link': holstel_link
 })
+print(holstel_floripa.head()
 
-print(holstel_floripa)
+#Criar arquivo csv
+holstel_floripa.to_csv('holstel_floripa.csv', encoding='utf-8')
 
 
 
