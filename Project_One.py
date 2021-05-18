@@ -40,7 +40,7 @@ for pagina in range(1):
     sleep(2)
 
 holstel_floripa= pd.DataFrame({
-    'Nome': holstel_nome,
+    'Nomee': holstel_nome,
     'Nota': holstel_ratings,
     'Rewiew': holstel_rewiew,
     'Preço': holstel_preco,
